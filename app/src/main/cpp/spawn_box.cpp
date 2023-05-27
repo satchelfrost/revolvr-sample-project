@@ -1,6 +1,6 @@
-#include "common/spawn_box.h"
+#include "spawn_box.h"
 #include "global_context.h"
-#include "common/helper_macros.h"
+#include "helper_macros.h"
 #include "action/io.h"
 #include "ecs/component/types/spatial.h"
 #include "ecs/component/types/mesh.h"

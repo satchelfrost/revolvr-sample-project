@@ -19,14 +19,14 @@ find_library(vulkan vulkan REQUIRED)
 find_library(aaudio aaudio REQUIRED)
 
 # Add 3rd party libs
-add_subdirectory(libs)
+add_subdirectory(revolvr/libs)
 
 # Creating variables containing source locations
 file(
   GLOB_RECURSE
   LOCAL_SOURCE
   CONFIGURE_DEPENDS
-  "engine/*.cpp"
+  "revolvr/src/*.cpp"
   "app/src/main/cpp/*.cpp"
 )
 
@@ -34,7 +34,7 @@ file(
   GLOB_RECURSE
   LOCAL_ASSEMBLY
   CONFIGURE_DEPENDS
-  "engine/*.s"
+  "revolvr/src/*.s"
 )
 
 # Creates and names a library, sets it as either STATIC
@@ -47,8 +47,8 @@ add_library(game SHARED ${LOCAL_ASSEMBLY} ${LOCAL_SOURCE})
 target_include_directories(
   game
   PUBLIC
-  ${CMAKE_CURRENT_SOURCE_DIR}/engine/include
-  ${CMAKE_CURRENT_SOURCE_DIR}/app/src/main/cpp/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/revolvr/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/app/include
   ${ANDROID_NDK}/sources/android/native_app_glue/
 )
 
