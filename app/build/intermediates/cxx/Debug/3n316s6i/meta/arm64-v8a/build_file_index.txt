@@ -1,8 +1,0 @@
-/home/reese/Dev/Repos/mine/revolvr/CMakeLists.txt
-/home/reese/Dev/Repos/mine/revolvr/libs/CMakeLists.txt
-/home/reese/Dev/Repos/mine/revolvr/libs/glm/CMakeLists.txt
-/home/reese/Dev/Repos/mine/revolvr/libs/glm/cmake/cmake_uninstall.cmake.in
-/home/reese/Dev/Repos/mine/revolvr/libs/glm/glm/CMakeLists.txt
-/home/reese/Dev/Repos/mine/revolvr/libs/meta/AudioSDK/CMakeLists.txt
-/home/reese/Dev/Repos/mine/revolvr/libs/meta/CMakeLists.txt
-/home/reese/Dev/Repos/mine/revolvr/libs/meta/OpenXR/CMakeLists.txt

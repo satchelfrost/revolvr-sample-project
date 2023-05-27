@@ -1,3 +1,0 @@
-ninja: Entering directory `/home/reese/Dev/Repos/mine/revolvr/app/.cxx/Debug/3n316s6i/arm64-v8a'
-[0/2] Re-checking globbed directories...
-ninja: no work to do.
