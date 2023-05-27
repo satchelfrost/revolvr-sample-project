@@ -1,0 +1,140 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:2:1-41:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/reese/.gradle/caches/transforms-3/9793180ec4747a9f10f1963bf5a36a1b/transformed/appcompat-v7-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/reese/.gradle/caches/transforms-3/6d40ff053e154bcb5e16e00742e6b64d/transformed/support-fragment-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/reese/.gradle/caches/transforms-3/22ddc4b6d07f82eceaf530cf7646c44f/transformed/animated-vector-drawable-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/reese/.gradle/caches/transforms-3/0a32a97504fab983b1f4b261d927f897/transformed/support-core-ui-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/reese/.gradle/caches/transforms-3/0fd4d4bd9d96f555ec31af79c51cc2df/transformed/support-core-utils-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/reese/.gradle/caches/transforms-3/9a656e181cd7539f43023be3187d6700/transformed/support-vector-drawable-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/reese/.gradle/caches/transforms-3/769caebe439c066c12f47014f596e150/transformed/support-compat-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/reese/.gradle/caches/transforms-3/3c1989fa8adc4563c0235d4167f3280c/transformed/livedata-core-1.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/reese/.gradle/caches/transforms-3/fd7b7403f415e5b89c0fc978fc3fe4b1/transformed/viewmodel-1.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/reese/.gradle/caches/transforms-3/34139a051d0fe92a4dc254d6528b8082/transformed/runtime-1.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/reese/.gradle/caches/transforms-3/2df31dbced21a1bff3c4067e4ee808a2/transformed/runtime-1.1.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:2:1-41:12
+	package
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:3:3-34
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:5:3-28
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:4:3-26
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+	android:installLocation
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:6:9-39
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:8:2-77
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:8:19-74
+uses-permission#android.permission.INTERNET
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:9:2-64
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:9:19-61
+uses-feature#android.hardware.vr.headtracking
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:10:2-90
+	android:required
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:10:64-87
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:10:16-63
+uses-feature#oculus.software.handtracking
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:13:2-87
+	android:required
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:13:60-84
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:13:16-59
+uses-permission#com.oculus.permission.HAND_TRACKING
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:14:2-72
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:14:19-69
+application
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:16:2-40:16
+	android:label
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:16:43-62
+	android:allowBackup
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:16:15-42
+meta-data#com.oculus.supportedDevices
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:17:2-78
+	android:value
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:17:56-75
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:17:13-55
+activity#android.app.NativeActivity
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:23:3-39:14
+	android:screenOrientation
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:27:5-42
+	android:launchMode
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:26:5-36
+	android:configChanges
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:28:5-106
+	android:theme
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:25:5-69
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:24:5-46
+meta-data#android.app.lib_name
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:31:7-77
+	android:value
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:31:54-74
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:31:18-53
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER+category:name:com.oculus.intent.category.VR
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:34:4-38:20
+action#android.intent.action.MAIN
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:35:5-57
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:35:13-54
+category#com.oculus.intent.category.VR
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:36:5-62
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:36:15-59
+category#android.intent.category.LAUNCHER
+ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:37:5-65
+	android:name
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml:37:15-62
+uses-sdk
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/reese/.gradle/caches/transforms-3/9793180ec4747a9f10f1963bf5a36a1b/transformed/appcompat-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/reese/.gradle/caches/transforms-3/9793180ec4747a9f10f1963bf5a36a1b/transformed/appcompat-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/reese/.gradle/caches/transforms-3/6d40ff053e154bcb5e16e00742e6b64d/transformed/support-fragment-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/reese/.gradle/caches/transforms-3/6d40ff053e154bcb5e16e00742e6b64d/transformed/support-fragment-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/reese/.gradle/caches/transforms-3/22ddc4b6d07f82eceaf530cf7646c44f/transformed/animated-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/reese/.gradle/caches/transforms-3/22ddc4b6d07f82eceaf530cf7646c44f/transformed/animated-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/reese/.gradle/caches/transforms-3/0a32a97504fab983b1f4b261d927f897/transformed/support-core-ui-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/reese/.gradle/caches/transforms-3/0a32a97504fab983b1f4b261d927f897/transformed/support-core-ui-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/reese/.gradle/caches/transforms-3/0fd4d4bd9d96f555ec31af79c51cc2df/transformed/support-core-utils-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/reese/.gradle/caches/transforms-3/0fd4d4bd9d96f555ec31af79c51cc2df/transformed/support-core-utils-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/reese/.gradle/caches/transforms-3/9a656e181cd7539f43023be3187d6700/transformed/support-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/reese/.gradle/caches/transforms-3/9a656e181cd7539f43023be3187d6700/transformed/support-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/reese/.gradle/caches/transforms-3/769caebe439c066c12f47014f596e150/transformed/support-compat-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/reese/.gradle/caches/transforms-3/769caebe439c066c12f47014f596e150/transformed/support-compat-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/reese/.gradle/caches/transforms-3/3c1989fa8adc4563c0235d4167f3280c/transformed/livedata-core-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/reese/.gradle/caches/transforms-3/3c1989fa8adc4563c0235d4167f3280c/transformed/livedata-core-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/reese/.gradle/caches/transforms-3/fd7b7403f415e5b89c0fc978fc3fe4b1/transformed/viewmodel-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/reese/.gradle/caches/transforms-3/fd7b7403f415e5b89c0fc978fc3fe4b1/transformed/viewmodel-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/reese/.gradle/caches/transforms-3/34139a051d0fe92a4dc254d6528b8082/transformed/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/reese/.gradle/caches/transforms-3/34139a051d0fe92a4dc254d6528b8082/transformed/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/reese/.gradle/caches/transforms-3/2df31dbced21a1bff3c4067e4ee808a2/transformed/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/reese/.gradle/caches/transforms-3/2df31dbced21a1bff3c4067e4ee808a2/transformed/runtime-1.1.0/AndroidManifest.xml:20:5-44
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+		ADDED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml
+		INJECTED from /home/reese/Dev/Repos/mine/revolvr/app/AndroidManifest.xml

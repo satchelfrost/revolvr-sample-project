@@ -1,0 +1,176 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "libs",
+					"childIndexes" : 
+					[
+						2,
+						5
+					],
+					"jsonFile" : "directory-libs-Debug-ec580da4e47c3b0e73da.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "libs"
+				},
+				{
+					"build" : "libs/meta",
+					"childIndexes" : 
+					[
+						3,
+						4
+					],
+					"jsonFile" : "directory-libs.meta-Debug-4abe6f75a5de8de5260a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "libs/meta"
+				},
+				{
+					"build" : "libs/meta/OpenXR",
+					"jsonFile" : "directory-libs.meta.OpenXR-Debug-d9d3fa2424dc513c0a25.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "libs/meta/OpenXR"
+				},
+				{
+					"build" : "libs/meta/AudioSDK",
+					"jsonFile" : "directory-libs.meta.AudioSDK-Debug-abff65cd1d94f760c3ba.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "libs/meta/AudioSDK"
+				},
+				{
+					"build" : "libs/glm",
+					"childIndexes" : 
+					[
+						6
+					],
+					"jsonFile" : "directory-libs.glm-Debug-44c86d80c1bd93f510b3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "libs/glm",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "libs/glm/glm",
+					"jsonFile" : "directory-libs.glm.glm-Debug-cdeeb9f9b6cfd4b776d1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 1,
+					"source" : "libs/glm/glm"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "app",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5,
+						6
+					],
+					"name" : "glm",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "game::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-game-Debug-04ed43d0d3ef3e126257.json",
+					"name" : "game",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "uninstall::@87d16e3dbd78f67ca781",
+					"jsonFile" : "target-uninstall-Debug-3b5a7516d86b63c5116d.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/reese/Dev/Repos/mine/revolvr/app/.cxx/Debug/3n316s6i/arm64-v8a",
+		"source" : "/home/reese/Dev/Repos/mine/revolvr"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

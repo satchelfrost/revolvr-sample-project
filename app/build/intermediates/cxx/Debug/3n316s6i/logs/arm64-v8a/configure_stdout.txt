@@ -1,0 +1,11 @@
+-- The ASM compiler identification is Clang with GNU-like command-line
+-- Found assembler: /home/reese/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/reese/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- GLM: Version 0.9.9.9
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/reese/Dev/Repos/mine/revolvr/app/.cxx/Debug/3n316s6i/arm64-v8a

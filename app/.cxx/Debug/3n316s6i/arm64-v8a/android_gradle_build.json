@@ -1,0 +1,53 @@
+{
+  "buildFiles": [
+    "/home/reese/Dev/Repos/mine/revolvr/CMakeLists.txt",
+    "/home/reese/Dev/Repos/mine/revolvr/libs/CMakeLists.txt",
+    "/home/reese/Dev/Repos/mine/revolvr/libs/glm/CMakeLists.txt",
+    "/home/reese/Dev/Repos/mine/revolvr/libs/glm/cmake/cmake_uninstall.cmake.in",
+    "/home/reese/Dev/Repos/mine/revolvr/libs/glm/glm/CMakeLists.txt",
+    "/home/reese/Dev/Repos/mine/revolvr/libs/meta/AudioSDK/CMakeLists.txt",
+    "/home/reese/Dev/Repos/mine/revolvr/libs/meta/CMakeLists.txt",
+    "/home/reese/Dev/Repos/mine/revolvr/libs/meta/OpenXR/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/usr/bin/ninja",
+      "-C",
+      "/home/reese/Dev/Repos/mine/revolvr/app/.cxx/Debug/3n316s6i/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/usr/bin/ninja",
+    "-C",
+    "/home/reese/Dev/Repos/mine/revolvr/app/.cxx/Debug/3n316s6i/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "game::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "game",
+      "output": "/home/reese/Dev/Repos/mine/revolvr/app/build/intermediates/cxx/Debug/3n316s6i/obj/arm64-v8a/libgame.so",
+      "runtimeFiles": [
+        "/home/reese/Dev/Repos/mine/revolvr/libs/meta/OpenXR/Libs/Android/arm64-v8a/Debug/libopenxr_loader.so",
+        "/home/reese/Dev/Repos/mine/revolvr/libs/meta/AudioSDK/Libs/Android/arm64-v8a/libovraudio64.so"
+      ]
+    },
+    "uninstall::@87d16e3dbd78f67ca781": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "uninstall"
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/reese/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/home/reese/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
