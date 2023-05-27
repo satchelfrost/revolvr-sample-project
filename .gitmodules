@@ -1,0 +1,3 @@
+[submodule "revolvr"]
+	path = revolvr
+	url = https://github.com/satchelfrost/revolvr
