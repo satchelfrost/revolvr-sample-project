@@ -3,13 +3,22 @@ TrackedSpace.type {Player}
 Spatial.position {3, 0, 0}
 
 #### Specify some left hand joints ####
+[entity id=11]
+TrackedSpace.type {LeftIndexTip}
+Spatial.scale {0.02, 0.02, 0.02}
+Mesh {}
+Ritual.type {HandTrackingRitual}
+Collider.type {Sphere}
+Collider.radius {0.01}
+
+# Finger tips
 [entity id=6]  TrackedSpace.type {LeftThumbTip} Spatial.scale {0.02, 0.02, 0.02} Mesh {}
-[entity id=11] TrackedSpace.type {LeftIndexTip} Spatial.scale {0.02, 0.02, 0.02} Mesh {}
 [entity id=16] TrackedSpace.type {LeftMiddleTip} Spatial.scale {0.02, 0.02, 0.02} Mesh {}
 [entity id=21] TrackedSpace.type {LeftRingTip} Spatial.scale {0.02, 0.02, 0.02} Mesh {}
 [entity id=26] TrackedSpace.type {LeftPinkyTip} Spatial.scale {0.02, 0.02, 0.02} Mesh{}
 
-[entity id=1]  TrackedSpace.type {LeftHandJoint0} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
+# Other joints
+[entity id=1]  TrackedSpace.type {LeftCenterJoint} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
 [entity id=2]  TrackedSpace.type {LeftHandJoint1} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
 [entity id=3]  TrackedSpace.type {LeftHandJoint2} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
 [entity id=4]  TrackedSpace.type {LeftHandJoint3} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
@@ -32,13 +41,22 @@ Spatial.position {3, 0, 0}
 [entity id=25] TrackedSpace.type {LeftHandJoint24} Spatial.scale {0.01, 0.01, 0.01} Mesh{}
 
 #### Specify some right hand joints ####
+# Finger tips
+[entity id=37]
+TrackedSpace.type {RightIndexTip}
+Spatial.scale {0.02, 0.02, 0.02}
+Mesh {}
+Ritual.type {HandTrackingRitual}
+Collider.type {Sphere}
+Collider.radius {0.01}
+
 [entity id=32] TrackedSpace.type {RightThumbTip} Spatial.scale {0.02, 0.02, 0.02} Mesh {}
-[entity id=37] TrackedSpace.type {RightIndexTip} Spatial.scale {0.02, 0.02, 0.02} Mesh {}
 [entity id=42] TrackedSpace.type {RightMiddleTip} Spatial.scale {0.02, 0.02, 0.02} Mesh {}
 [entity id=47] TrackedSpace.type {RightRingTip} Spatial.scale {0.02, 0.02, 0.02} Mesh {}
 [entity id=52] TrackedSpace.type {RightPinkyTip} Spatial.scale {0.02, 0.02, 0.02} Mesh{}
 
-[entity id=27] TrackedSpace.type {RightHandJoint0} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
+# Other joints
+[entity id=27] TrackedSpace.type {RightCenterJoint} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
 [entity id=28] TrackedSpace.type {RightHandJoint1} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
 [entity id=29] TrackedSpace.type {RightHandJoint2} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
 [entity id=30] TrackedSpace.type {RightHandJoint3} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
@@ -59,3 +77,11 @@ Spatial.position {3, 0, 0}
 [entity id=49] TrackedSpace.type {RightHandJoint22} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
 [entity id=50] TrackedSpace.type {RightHandJoint23} Spatial.scale {0.01, 0.01, 0.01} Mesh {}
 [entity id=51] TrackedSpace.type {RightHandJoint24} Spatial.scale {0.01, 0.01, 0.01} Mesh{}
+
+# Box that disappears
+[entity id=53 name=disappearing_box parent=27]
+Spatial.position {0, -0.2, -0.05}
+Spatial.scale {0.04, 0.04, 0.04}
+Mesh {}
+Collider.type {Sphere}
+Collider.radius {0.02}
