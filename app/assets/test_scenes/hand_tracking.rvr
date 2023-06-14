@@ -81,7 +81,7 @@ Collider.radius {0.01}
 # Box that disappears
 [entity id=53 name=disappearing_box parent=27]
 Spatial.position {0, -0.2, -0.05}
-Spatial.scale {0.04, 0.04, 0.04}
+Spatial.scale {2, 2, 2}
 Mesh {}
 Collider.type {Sphere}
-Collider.radius {0.02}
+Collider.radius {0.01}
