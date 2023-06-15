@@ -7,3 +7,4 @@
     X(SpawnBox) \
     X(TimerBoxMaker) \
     X(ConwayBoxMaker) \
+    X(HandTrackingRitual) \

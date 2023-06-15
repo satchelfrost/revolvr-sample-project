@@ -3,24 +3,24 @@ TrackedSpace.type {Player}
 Spatial.position {3, 0, 0}
 Spatial.orientation {0, 0, 0, 1}
 
-[entity id=1 name=Left_Hand]
-TrackedSpace.type {LeftHand}
-Spatial.scale {0.1, 0.1, 0.1}
+[entity id=1 name=Left_Controller]
+TrackedSpace.type {LeftController}
+Spatial.scale {0.2, 0.2, 0.2}
 Mesh {}
 Ritual.type {HandBehavior}
 Ritual.can_update {true}
 Collider.type {Sphere}
-Collider.radius {0.05}
+Collider.radius {0.1}
 # Collider.type {AABB}
 # Collider.half_extents {0.1, 0.05, 0.05}
 
-[entity id=2 name=Right_Hand]
-TrackedSpace.type {RightHand}
-Spatial.scale {0.1, 0.1, 0.1}
+[entity id=2 name=Right_Controller]
+TrackedSpace.type {RightController}
+Spatial.scale {0.2, 0.2, 0.2}
 Mesh {}
 Ritual.type {HandBehavior}
 Ritual.can_update {true}
 Collider.type {Sphere}
-Collider.radius {0.05}
+Collider.radius {0.1}
 # Collider.type {AABB}
 # Collider.half_extents {0.1, 0.05, 0.05}
