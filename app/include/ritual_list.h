@@ -9,3 +9,4 @@
     X(ConwayBoxMaker) \
     X(HandTrackingRitual) \
     X(MovementRitual) \
+    X(HandShooter) \
