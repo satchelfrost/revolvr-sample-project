@@ -8,3 +8,4 @@
     X(TimerBoxMaker) \
     X(ConwayBoxMaker) \
     X(HandTrackingRitual) \
+    X(MovementRitual) \
