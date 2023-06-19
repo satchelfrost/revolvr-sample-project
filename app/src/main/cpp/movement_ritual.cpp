@@ -6,7 +6,7 @@
 
 MovementRitual::MovementRitual(rvr::type::EntityId id) : Ritual(id) {
     playerSpatial_ = GetComponent<rvr::Spatial>(1);
-    joyStickSpatial_ = GetComponent<rvr::Spatial>(4);
+    joystickPivotPointSpatial_ = GetComponent<rvr::Spatial>(12);
 }
 
 void MovementRitual::Begin() {}
@@ -16,23 +16,24 @@ void MovementRitual::Update(float delta) {
 
     // forward/backward movement with right joystick y-axis
     auto position = playerSpatial_->GetLocal().GetPosition();
-    auto forward = playerSpatial_->GetLocal().GetZAxis();
-    forward.z *= -1; // -z is forward
+    auto forward = -playerSpatial_->GetLocal().GetZAxis();
     position += forward * rightJoy.y * delta;
     playerSpatial_->SetLocalPosition(position);
 
     // Rotate left/right movement with right joystick x-axis
-    float angle = rightJoy.x * delta;
+    float angle = -rightJoy.x * delta;
     auto transform = playerSpatial_->GetLocal().Rotated({0, 1, 0}, angle);
     playerSpatial_->SetLocal(transform);
 
     // Visualize the joystick
-    auto xAxis = joyStickSpatial_->GetLocal().GetXAxis();
-    auto yAxis = joyStickSpatial_->GetLocal().GetYAxis();
+    auto xAxis = joystickPivotPointSpatial_->GetLocal().GetXAxis();
+    auto yAxis = joystickPivotPointSpatial_->GetLocal().GetYAxis();
     float forwardBackwardTilt = -rightJoy.y * 45;
     float leftRightTilt = -rightJoy.x * 45;
-    auto orientation = rvr::math::quaternion::FromAxisAngle(xAxis, forwardBackwardTilt);
-    orientation *= rvr::math::quaternion::FromAxisAngle(yAxis, leftRightTilt);
-    joyStickSpatial_->SetLocalOrientation(orientation);
-
+//    auto orientation = rvr::math::quaternion::FromAxisAngle(xAxis, forwardBackwardTilt);
+//    orientation *= rvr::math::quaternion::FromAxisAngle(yAxis, leftRightTilt);
+    glm::quat tiltQuaternion = glm::angleAxis(glm::radians(forwardBackwardTilt), xAxis)
+                               * glm::angleAxis(glm::radians(leftRightTilt), yAxis);
+//    joystickPivotPointSpatial_->SetLocalOrientation(orientation);
+    joystickPivotPointSpatial_->SetLocalOrientation(tiltQuaternion);
 }

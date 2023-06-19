@@ -27,6 +27,7 @@ void MovingSoundBox::Update(float delta) {
         audio_->Play();
 
     // Play the achievement jingle (regular audio)
+    int ACHIEVEMENT_ENTITY_ID = 2;
     if (ButtonPressed(rvr::ActionType::B))
-        GetComponent<rvr::Audio>(15)->Play();
+        GetComponent<rvr::Audio>(ACHIEVEMENT_ENTITY_ID)->Play();
 }

@@ -17,4 +17,5 @@ private:
     rvr::Spatial* shooterBoxSpatial_;
     bool isDetached_;
     float projectileSpeed_;
+    rvr::math::Transform originalTransform_;
 };

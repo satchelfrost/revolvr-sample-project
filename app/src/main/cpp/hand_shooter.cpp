@@ -7,6 +7,7 @@
 
 HandShooter::HandShooter(rvr::type::EntityId id) : Ritual(id) {
     shooterBoxSpatial_ = GetComponent<rvr::Spatial>(id);
+    originalTransform_ = shooterBoxSpatial_->GetWorld();
     isDetached_ = false;
     projectileSpeed_ = 7.0f;
 }
@@ -18,11 +19,11 @@ void HandShooter::Update(float delta) {
         // Play shoot sound...
 
         // Reparent from hand to the origin
-//        rvr::Entity* shooterBox = GetEntity(id);
-//        rvr::Entity* origin = GetEntity(0);
-//        origin->AddChild(shooterBox);
-//        shooterBoxSpatial_->UpdateWorld();
+        rvr::Entity* shooterBox = GetEntity(id);
+        rvr::Entity* origin = GetEntity(0);
 
+        shooterBoxSpatial_->SetLocal(shooterBoxSpatial_->GetWorld());
+        shooterBox->SetParent(origin);
         isDetached_ = true;
 
         // Start positional and visual reset timer
@@ -32,8 +33,7 @@ void HandShooter::Update(float delta) {
 
     if (isDetached_) {
         auto position = shooterBoxSpatial_->GetLocal().GetPosition();
-        auto forward = shooterBoxSpatial_->GetLocal().GetYAxis();
-        forward.y *= -1;
+        auto forward = -shooterBoxSpatial_->GetLocal().GetYAxis();
         position += forward * projectileSpeed_ * delta;
         shooterBoxSpatial_->SetLocalPosition(position);
     }
@@ -43,7 +43,6 @@ void HandShooter::OnTriggered(rvr::Collider* other) {
     // Play boom boom noise...
 
     SetVisibilityOfBoxes(false);
-//    Reset();
     Log::Write(Log::Level::Info,"Collision has occurred");
 }
 
@@ -54,17 +53,14 @@ void HandShooter::OnTimeout() {
 }
 
 void HandShooter::Reset() {
-////     Reset projectile by attaching to hand
-//    rvr::Entity* shooterBox = GetEntity(id);
-//    constexpr int handId = 34;
-//    rvr::Entity* rightHand = GetEntity(handId);
-//    rightHand->AddChild(shooterBox);
+    //Reset projectile by attaching to hand
+    rvr::Entity* shooterBox = GetEntity(id);
+    int RIGHT_CENTER_HAND_JOINT = 34;
+    rvr::Entity* rightHand = GetEntity(RIGHT_CENTER_HAND_JOINT);
 
-    shooterBoxSpatial_->SetLocalPosition({0, -0.2, -0.05});
+    shooterBoxSpatial_->SetLocal(originalTransform_);
+    shooterBox->SetParent(rightHand);
     isDetached_ = false;
-
-    // Possibly need to UpdateWorld or something of that nature
-
     SetVisibilityOfBoxes(true);
 }
 

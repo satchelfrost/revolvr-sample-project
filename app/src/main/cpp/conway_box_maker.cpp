@@ -4,9 +4,9 @@
 #include <ecs/component/types/mesh.h>
 #include <ecs/component/types/spatial.h>
 
-ConwayBoxMaker::ConwayBoxMaker(rvr::type::EntityId id) : Ritual(id),
-cloneBoxEntityId_(4), conwayEngine_(19, 19) {
-    auto spatial = GetComponent<rvr::Spatial>(cloneBoxEntityId_);
+ConwayBoxMaker::ConwayBoxMaker(rvr::type::EntityId id) : Ritual(id), conwayEngine_(19, 19) {
+    CLONE_BOX_ID = 5;
+    auto spatial = GetComponent<rvr::Spatial>(CLONE_BOX_ID);
     boxHalfExtent_ = spatial->GetLocal().GetScale().x;
 
     // Create a glider and set the board
@@ -40,7 +40,7 @@ void ConwayBoxMaker::OnTimeout() {
 }
 
 rvr::Entity *ConwayBoxMaker::CreateBoxViaClone() const {
-    auto prototypeBox = GetEntity(cloneBoxEntityId_);
+    auto prototypeBox = GetEntity(CLONE_BOX_ID);
     auto box = prototypeBox->Clone();
     auto mesh = GetComponent<rvr::Mesh>(box->id);
     mesh->SetVisibilityRecursive(true);

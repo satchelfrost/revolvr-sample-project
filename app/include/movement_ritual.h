@@ -12,5 +12,5 @@ public:
 
 private:
     rvr::Spatial* playerSpatial_;
-    rvr::Spatial* joyStickSpatial_;
+    rvr::Spatial* joystickPivotPointSpatial_;
 };
