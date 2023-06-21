@@ -16,7 +16,7 @@ void HandBehavior::Begin() {}
 
 void HandBehavior::Update(float delta) {
     // Id 1 is the left hand from the rvr file
-    rvr::Hand hand = (id == 1) ? rvr::Hand::Left : rvr::Hand::Right;
+    rvr::Hand hand = (id == 2) ? rvr::Hand::Left : rvr::Hand::Right;
 
     float value = GetGripTriggerValue(hand);
     if (value > 0.9)

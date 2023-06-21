@@ -33,7 +33,8 @@ rvr::Entity* SpawnBox::CreateBoxManually() {
 }
 
 rvr::Entity* SpawnBox::CreateBoxViaClone() {
-    auto prototypeBox = GetEntity(prototypeBoxId_);
+    int PROTOTYPE_BOX_ID = 5;
+    auto prototypeBox = GetEntity(PROTOTYPE_BOX_ID);
     auto box = prototypeBox->Clone();
     auto mesh = GetComponent<rvr::Mesh>(box->id);
     mesh->SetVisibilityRecursive(true);

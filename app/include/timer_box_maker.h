@@ -11,7 +11,6 @@ public:
     void AdjustBoxPosition(rvr::Entity* entity);
 
 private:
-    rvr::type::EntityId spawnBoxEntityId_;
     int offset_;
     std::vector<rvr::Entity*> spawnedEntities_;
 };

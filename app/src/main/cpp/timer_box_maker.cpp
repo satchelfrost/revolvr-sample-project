@@ -4,7 +4,7 @@
 #include "ecs/component/types/spatial.h"
 #include "ecs/component/types/mesh.h"
 
-TimerBoxMaker::TimerBoxMaker(rvr::type::EntityId id) : Ritual(id), spawnBoxEntityId_(4), offset_(0) {}
+TimerBoxMaker::TimerBoxMaker(rvr::type::EntityId id) : Ritual(id), offset_(0) {}
 
 void TimerBoxMaker::OnTimeout() {
     if (spawnedEntities_.size() < 21) {
@@ -24,7 +24,8 @@ void TimerBoxMaker::OnTimeout() {
 }
 
 rvr::Entity* TimerBoxMaker::CreateBoxViaClone() const {
-    auto prototypeBox = GetEntity(spawnBoxEntityId_);
+    int BOX_TO_CLONE = 5;
+    auto prototypeBox = GetEntity(BOX_TO_CLONE);
     auto box = prototypeBox->Clone();
     auto mesh = GetComponent<rvr::Mesh>(box->id);
     mesh->SetVisibilityRecursive(true);

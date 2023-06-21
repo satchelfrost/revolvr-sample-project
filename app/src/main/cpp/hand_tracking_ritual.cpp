@@ -8,7 +8,7 @@ HandTrackingRitual::HandTrackingRitual(rvr::type::EntityId id) : Ritual(id) {}
 
 void HandTrackingRitual::Update(float delta) {
     if (IsPinched(rvr::Hand::Left) || IsPinched(rvr::Hand::Right)) {
-        constexpr int DISAPPEARING_BOX_ID = 53;
+        constexpr int DISAPPEARING_BOX_ID = 54;
         auto mesh = GetComponent<rvr::Mesh>(DISAPPEARING_BOX_ID);
         mesh->SetVisibilityRecursive(true);
     }
