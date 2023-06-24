@@ -5,7 +5,7 @@
 #include <ecs/component/types/timer.h>
 #include <ecs/component/types/mesh.h>
 
-HandShooter::HandShooter(rvr::type::EntityId id) : Ritual(id), gen_(rd_()), distribution_(-3, 3){
+HandShooter::HandShooter(rvr::type::EntityId id) : Ritual(id), gen_(rd_()), distribution_(-10, 10){
     shooterBoxSpatial_ = GetComponent<rvr::Spatial>(id);
     originalTransform_ = shooterBoxSpatial_->GetLocal();
     isDetached_ = false;
@@ -80,8 +80,11 @@ void HandShooter::Reset() {
         auto position = otherBox->GetLocal().GetPosition();
         position.x = (float)distribution_(gen_);
         position.z = (float)distribution_(gen_);
-//        position.x = 0.0f;
-//        position.z = -1.0f;
+        // Avoid spawning box too close to player
+        if (abs(position.x) < 3)
+            position.x = 3;
+        if (abs(position.z) < 3)
+            position.z = 3;
         otherBox->SetLocalPosition(position);
     }
 
