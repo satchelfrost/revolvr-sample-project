@@ -1,7 +1,7 @@
 #include <movement_ritual.h>
 #include <global_context.h>
 #include <helper_macros.h>
-#include <action/io.h>
+#include "io/io.h"
 #include <cmath>
 
 MovementRitual::MovementRitual(rvr::type::EntityId id) : Ritual(id) {

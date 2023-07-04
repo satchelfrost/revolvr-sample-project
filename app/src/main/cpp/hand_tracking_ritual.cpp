@@ -2,7 +2,7 @@
 #include <global_context.h>
 #include <helper_macros.h>
 #include <ecs/component/types/mesh.h>
-#include <action/io.h>
+#include "io/io.h"
 
 HandTrackingRitual::HandTrackingRitual(rvr::type::EntityId id) : Ritual(id) {}
 
