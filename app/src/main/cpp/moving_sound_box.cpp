@@ -3,7 +3,7 @@
 #include "ecs/ecs.h"
 #include "ecs/component/types/spatial.h"
 #include "global_context.h"
-#include "action/io.h"
+#include "io/io.h"
 #include "helper_macros.h"
 
 MovingSoundBox::MovingSoundBox(rvr::type::EntityId id) : Ritual(id) {
@@ -27,6 +27,7 @@ void MovingSoundBox::Update(float delta) {
         audio_->Play();
 
     // Play the achievement jingle (regular audio)
+    int ACHIEVEMENT_ENTITY_ID = 2;
     if (ButtonPressed(rvr::ActionType::B))
-        GetComponent<rvr::Audio>(15)->Play();
+        GetComponent<rvr::Audio>(ACHIEVEMENT_ENTITY_ID)->Play();
 }

@@ -12,7 +12,7 @@ public:
 private:
     void AdjustBoxPosition(rvr::Entity* entity, int yOffset, int xOffset) const;
 
-    rvr::type::EntityId cloneBoxEntityId_;
+    int CLONE_BOX_ID;
     ConwayEngine conwayEngine_;
     std::vector<rvr::Entity*> entities_;
     float boxHalfExtent_;

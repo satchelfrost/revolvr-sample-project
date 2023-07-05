@@ -17,6 +17,4 @@ private:
     void AdjustBoxPosition(rvr::Entity* entity);
 
     std::vector<rvr::Entity*> spawnedEntities_;
-
-    static constexpr int prototypeBoxId_ = 6;
 };
