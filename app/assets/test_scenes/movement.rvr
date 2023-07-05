@@ -54,7 +54,3 @@ Mesh {}
 Spatial.scale {0.5, 0.5, 0.5}
 Spatial.position {-5, 0, 0}
 Mesh {}
-
-[entity id=11 parent=4]
-Spatial.position {-0.2, 0, 0}
-Mesh {}

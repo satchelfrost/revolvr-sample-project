@@ -2,6 +2,7 @@
 
 #include <ecs/component/types/ritual.h>
 #include <ecs/component/types/spatial.h>
+#include <random>
 
 class HandShooter : public rvr::Ritual {
 public:
@@ -18,4 +19,9 @@ private:
     bool isDetached_;
     float projectileSpeed_;
     rvr::math::Transform originalTransform_;
+    bool breakNoisePlayed_;
+
+    std::random_device rd_;
+    std::mt19937 gen_;
+    std::uniform_int_distribution<int> distribution_;
 };

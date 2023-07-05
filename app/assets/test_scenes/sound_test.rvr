@@ -28,3 +28,4 @@ Ritual.type {MovingSoundBox}
 Audio.track_name {ui_laser_shoot_01}
 Audio.loop {false}
 Audio.spatialize {true}
+Audio.spatial_id {0}

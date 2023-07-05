@@ -2,7 +2,7 @@
 Spatial.position {0, 0, 0}
 
 [entity id=1 name=Player]
-Spatial.position {3, 0, 0}
+Spatial.position {0, 0, 0}
 
 #### Specify some left hand joints ####
 
@@ -72,21 +72,29 @@ Spatial.position {3, 0, 0}
 Spatial.position {3, 1.6, -10}
 Mesh {}
 Collider.type {Sphere}
-Collider.radius {0.5}
+Collider.radius {0.625}
+Audio.track_name {impact_small_ceramic}
+Audio.loop {false}
+Audio.spatialize {true}
+Audio.spatial_id {0}
 
 # Projectile box
 [entity id=56 name=projectile parent=34]
 Spatial.position {0, -0.2, -0.05}
 Spatial.scale {4, 4, 4}
-#Spatial.euler {90, 0, 0}
+Spatial.euler {0, 0, 30}
 Mesh {}
 Collider.type {Sphere}
 Collider.radius {0.02}
-Timer.wait_time_seconds {3}
+Timer.wait_time_seconds {2}
 Timer.one_shot {true}
 Timer.auto_start {false}
 Ritual.type {HandShooter}
-#Audio.track_name {ui_laser_shoot_01}
-#Audio.loop {false}
-#Audio.spatialize {true}
+Audio.track_name {ui_laser_shoot_01}
+Audio.loop {false}
+Audio.spatialize {true}
+Audio.spatial_id {1}
 
+[entity id=57 name=Head parent=1]
+TrackedSpace.type {Head}
+Spatial {}
