@@ -1,7 +1,7 @@
 #include <hand_shooter.h>
 #include <global_context.h>
 #include <helper_macros.h>
-#include <action/io.h>
+#include "io/io.h"
 #include <ecs/component/types/timer.h>
 #include <ecs/component/types/mesh.h>
 

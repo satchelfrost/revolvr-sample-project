@@ -3,7 +3,7 @@
 #include "ecs/ecs.h"
 #include "ecs/component/types/spatial.h"
 #include "ecs/component/types/mesh.h"
-#include "action/io.h"
+#include "io/io.h"
 #include "global_context.h"
 #include "helper_macros.h"
 

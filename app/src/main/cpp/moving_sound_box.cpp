@@ -3,7 +3,7 @@
 #include "ecs/ecs.h"
 #include "ecs/component/types/spatial.h"
 #include "global_context.h"
-#include "action/io.h"
+#include "io/io.h"
 #include "helper_macros.h"
 
 MovingSoundBox::MovingSoundBox(rvr::type::EntityId id) : Ritual(id) {
