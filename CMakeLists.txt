@@ -49,8 +49,9 @@ target_include_directories(
   PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/revolvr/include
   ${CMAKE_CURRENT_SOURCE_DIR}/app/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/revolvr/libs/tinygltf
   ${ANDROID_NDK}/sources/android/native_app_glue/
 )
 
 # Adding libraries to link to game.
-target_link_libraries(game openxr_loader ovraudio glm ${android-log} ${android} ${vulkan} ${aaudio})
+target_link_libraries(game openxr_loader ovraudio glm ktx ${android-log} ${android} ${vulkan} ${aaudio})
