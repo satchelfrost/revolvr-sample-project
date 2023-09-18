@@ -53,3 +53,13 @@ Spatial.position {3, 3.25, -5}
 Mesh {}
 Spatial.scale {4, 0.5, 0.5}
 Spatial.position {3, 4.25, -5}
+
+[entity id=14]
+Mesh.gltf {scene}
+Spatial.position {0, 0, -1}
+Spatial.euler {-90, 0, 0}
+
+[entity id=15]
+Mesh.gltf {scene}
+Spatial.position {0, 0, -2}
+Spatial.euler {-90, 0, 0}
