@@ -6,6 +6,7 @@
 * [Getting started](#getting-started)
 * [Scene description files (.rvr)](#scene-description-files-overview)
 * [Creating your own scenes and Rituals](#custom-rituals--scenes)
+* [Loading gltf files](#loading-gltf-files)
 
 ## Overview
 This project contains examples to get RevolVR running for Quest 1, 2 & maybe others. For more information regarding the aims, features, and future work of RevolVR please defer to [this repo](https://github.com/satchelfrost/revolvr.git).
@@ -20,7 +21,7 @@ To run the examples in general we need to do the following:
 * Build & deploy to the headset
 
 To install android studio properly please refer to Meta's documentation [Android Development Setup](https://developer.oculus.com/documentation/native/android/mobile-studio-setup-android/). You will also need to ensure your headset is in developer mode. All of this can be found on Meta's developer documentation.
->**_IMPORTANT:_** If you are using Windows don't skip the enviornment variable setup (Linux you should be okay, & Mac??)
+>**_IMPORTANT:_** If you are using Windows don't skip the environment variable setup (Linux you should be okay, & Mac??)
 
 Ensure that the CMake bundled with android is the correct one. You can do this by going to the SDK manager in android studio, going to SDK tools and checking CMake (3.22.1).
 
@@ -154,3 +155,20 @@ This of course let's C++ know where to find the class so it can compile and link
 If all builds then you are all set!
 
 > **_NOTE_:** Sometimes the auto-complete / syntax highlighting can get a little weird when you add new classes. To fix this in Android Studio you should be able to delete the `.cxx` folder inside the app, and then hit the gradle sync.
+
+## Loading gltf files
+In order to load a gltf file simply specify the path starting from the assets folder as follows:
+
+```
+[entity id=15]
+Mesh.gltf {gltf/shrek/scene}
+Spatial.position {0, 0, -2}
+Spatial.scale {2, 2, 2}
+Spatial.euler {-90, 0, 0}
+```
+
+Here we can see that in the assets folder we have subfolders `gltf/shrek/scene`. Note that scene is actually `scene.gltf`. However we don't need to specify the extension.
+
+![](multi-model.png)
+
+For now each model is only loaded in memory, and every successful load using Mesh.gltf will actually just point to the same memory. The position, scale, euler, etc. can all be adjusted just like the previous examples.
