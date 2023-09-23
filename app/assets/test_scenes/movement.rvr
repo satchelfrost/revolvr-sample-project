@@ -2,7 +2,7 @@
 Spatial.position {0, 0, 0}
 
 [entity id=1 name=Player]
-Spatial.position {5, 0, 0}
+Spatial.position {0, 0, 0}
 
 [entity id=2 name=Left_Controller parent=1]
 TrackedSpace.type {LeftController}
@@ -15,7 +15,7 @@ Spatial.scale {0.1, 0.1, 0.1}
 Ritual.type {MovementRitual}
 Mesh {}
 
-[entity id=12 name=joystick_pivot_point parent=3]
+[entity id=12 name=joystick_pivot_point parent=2]
 Spatial.position {0, 0, -0.05}
 Spatial.scale {0.1, 0.1, 1}
 
@@ -54,3 +54,24 @@ Mesh {}
 Spatial.scale {0.5, 0.5, 0.5}
 Spatial.position {-5, 0, 0}
 Mesh {}
+
+[entity id=13]
+Spatial.position {0, 2, -2}
+Spatial.scale {0.1, 0.1, 0.1}
+Mesh {}
+
+[entity id=14]
+Spatial.position {0, 0, -3}
+
+[entity id=15 parent=14]
+Mesh.gltf {gltf/shrek/scene}
+Spatial.position {0, 0, 0}
+Spatial.scale {2, 2, 2}
+Spatial.euler {-90, 180, 0}
+
+[entity id=16 parent=15]
+Mesh.gltf {gltf/donkey/scene}
+Spatial.position {1, 0, 0}
+Spatial.scale {0.05, 0.05, 0.05}
+#Spatial.scale {0.1, 0.1, 0.1}
+#Spatial.euler {-90, 0, 0}
