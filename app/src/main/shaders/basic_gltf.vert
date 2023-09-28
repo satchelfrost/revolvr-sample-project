@@ -10,6 +10,7 @@ layout (set = 0, binding = 0) uniform UBOScene
     mat4 projection;
     mat4 view;
     vec4 lightPos;
+//    mat4 invView;
     vec4 viewPos;
 } uboScene;
 
@@ -30,6 +31,8 @@ void main()
     gl_Position = uboScene.projection * uboScene.view * positionWorld;
 
     outLightVec = uboScene.lightPos.xyz - positionWorld.xyz;
+//    vec3 cameraPosWorld = uboScene.invView[3].xyz;
+//    outViewVec = cameraPosWorld - positionWorld.xyz;
     outViewVec = uboScene.viewPos.xyz - positionWorld.xyz;
     outNormal = mat3(primitive.normal) * inNormal;
     outColor = inColor;
