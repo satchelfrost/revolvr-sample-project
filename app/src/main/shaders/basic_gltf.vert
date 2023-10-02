@@ -5,12 +5,19 @@ layout (location = 1) in vec3 inNormal;
 layout (location = 2) in vec2 inUV;
 layout (location = 3) in vec3 inColor;
 
+struct PointLightData {
+    vec4 position; // ignore w
+    vec4 color;    // color + intensity
+};
+
 layout (set = 0, binding = 0) uniform UBOScene
 {
     mat4 projection;
     mat4 view;
-    vec4 lightPos;
     vec4 viewPos;
+    vec4 ambientColor; // color + intensity
+    PointLightData pointLights[10];
+    int numLights;
 } uboScene;
 
 layout (push_constant) uniform PushConsts {
@@ -18,20 +25,17 @@ layout (push_constant) uniform PushConsts {
     mat4 normal;
 } primitive;
 
-layout (location = 0) out vec3 outNormal;
-layout (location = 1) out vec3 outColor;
-layout (location = 2) out vec2 outUV;
-layout (location = 3) out vec3 outViewVec;
-layout (location = 4) out vec3 outLightVec;
+layout (location = 0) out vec3 outColor;
+layout (location = 1) out vec3 outWorldPos;
+layout (location = 2) out vec3 outWorldNormal;
+layout (location = 3) out vec2 outUV;
 
 void main()
 {
     vec4 positionWorld = primitive.model * vec4(inPos, 1.0);
-    gl_Position = uboScene.projection * uboScene.view * positionWorld;
-
-    outNormal    = normalize(mat3(primitive.normal) * inNormal);
-    outColor     = inColor;
-    outUV        = inUV;
-    outViewVec   = normalize(uboScene.viewPos.xyz - positionWorld.xyz);
-    outLightVec  = normalize(uboScene.lightPos.xyz - positionWorld.xyz);
+    gl_Position        = uboScene.projection * uboScene.view * positionWorld;
+    outWorldNormal     = normalize(mat3(primitive.normal) * inNormal);
+    outWorldPos        = positionWorld.xyz;
+    outColor           = inColor;
+    outUV              = inUV;
 }
