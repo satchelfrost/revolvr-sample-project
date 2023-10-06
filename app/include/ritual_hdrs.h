@@ -9,3 +9,4 @@
 #include "hand_tracking_ritual.h"
 #include "movement_ritual.h"
 #include "hand_shooter.h"
+#include "orbiting_lights.h"

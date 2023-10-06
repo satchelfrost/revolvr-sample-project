@@ -13,5 +13,4 @@ public:
 private:
     rvr::Spatial* playerSpatial_;
     rvr::Spatial* joystickPivotPointSpatial_;
-    float angle = 0;
 };
