@@ -2,32 +2,38 @@
 #include <global_context.h>
 #include <helper_macros.h>
 
-#define LIGHT_1_ID 7
-#define LIGHT_2_ID 8
-#define LIGHT_3_ID 9
+#define FIRST_LIGHT_ID 7
 #define PI (3.14159f)
 #define TWO_PI (2.0f * PI)
 
 OrbitingLights::OrbitingLights(rvr::type::EntityId id) : Ritual(id) {
-    lightSpatials_.push_back(GetComponent<rvr::Spatial>(LIGHT_1_ID));
-    lightSpatials_.push_back(GetComponent<rvr::Spatial>(LIGHT_2_ID));
-    lightSpatials_.push_back(GetComponent<rvr::Spatial>(LIGHT_3_ID));
+    semiMajorAxis_ = (apoapsis_ + periapsis_) / 2.0f;
+    semiMinorAxis_ = sqrt(apoapsis_ * periapsis_);
+    float linearEccentricity = semiMajorAxis_ - periapsis_;
+    eccentricity_ = linearEccentricity / semiMajorAxis_;
+
+    for (int i = 0; i < NUM_LIGHTS; i++) {
+        if(lightSpatials_[i])
+            rvr::PrintWarning("Light spatial was initialized with something");
+
+        int eid = FIRST_LIGHT_ID + i;
+        auto spatial = GetComponent<rvr::Spatial>(eid);
+        if (spatial)
+            lightSpatials_[i] = spatial;
+        else
+            rvr::PrintError("Null pointer found on eid " + std::to_string(eid));
+    }
 }
 
 void OrbitingLights::Update(float delta) {
     currentTime_ += delta;
-
-    float semiMajorAxis = (apoapsis_ + periapsis_) / 2.0f;
-    float semiMinorAxis = sqrt(apoapsis_ * periapsis_);
-    float linearEccentricity = semiMajorAxis - periapsis_;
-    float eccentricity = linearEccentricity / semiMajorAxis;
     float meanAnomaly = currentTime_ * TWO_PI / period_;
 
-    for (int i = 0; i < lightSpatials_.size(); i++) {
-        float angleOffset = (TWO_PI / (float)lightSpatials_.size()) * (float)i;
-        float eccentricAnomaly = SolveKepler(meanAnomaly + angleOffset, eccentricity);
-        float x =  semiMajorAxis * ((float)cos(eccentricAnomaly) - eccentricity);
-        float z = -semiMinorAxis * (float)sin(eccentricAnomaly);
+    for (int i = 0; i < NUM_LIGHTS; i++) {
+        float angleOffset = (TWO_PI / (float)NUM_LIGHTS) * (float)i;
+        float eccentricAnomaly = SolveKepler(meanAnomaly + angleOffset, eccentricity_);
+        float x =  semiMajorAxis_ * ((float)cos(eccentricAnomaly) - eccentricity_);
+        float z = -semiMinorAxis_ * (float)sin(eccentricAnomaly);
         lightSpatials_[i]->SetLocalPosition({x, 0.0f, z});
     }
 }
