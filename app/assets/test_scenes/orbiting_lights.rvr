@@ -29,6 +29,7 @@ Spatial.euler {-90, 0, 0}
 [entity id=6 name=orbit_point]
 Spatial.position {0, 2, -3}
 Spatial.scale {0.1, 0.1, 0.1}
+Spatial.euler {0, 20, 0}
 Ritual.type {OrbitingLights}
 Mesh {}
 
