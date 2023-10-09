@@ -4,9 +4,12 @@
 #include "io/io.h"
 #include <cmath>
 
+#define PLAYER_ID 1
+#define JOYSTICK_PIVOT_ID 12
+
 MovementRitual::MovementRitual(rvr::type::EntityId id) : Ritual(id) {
-    playerSpatial_ = GetComponent<rvr::Spatial>(1);
-    joystickPivotPointSpatial_ = GetComponent<rvr::Spatial>(12);
+    playerSpatial_ = GetComponent<rvr::Spatial>(PLAYER_ID);
+    joystickPivotPointSpatial_ = GetComponent<rvr::Spatial>(JOYSTICK_PIVOT_ID);
 }
 
 void MovementRitual::Begin() {}

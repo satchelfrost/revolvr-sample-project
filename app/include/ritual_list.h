@@ -10,3 +10,4 @@
     X(HandTrackingRitual) \
     X(MovementRitual) \
     X(HandShooter) \
+    X(OrbitingLights) \
