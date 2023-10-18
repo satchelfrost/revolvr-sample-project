@@ -16,7 +16,9 @@ Mesh {}
 
 [entity id=4 name=WorldOriginMesh]
 #Mesh {}
+PointCloud.ply {flowers}
 Spatial.scale {0.5, 0.5, 0.5}
+Spatial.position {7, 3, 25}
 
 [entity id=5 name=Back_Mesh]
 Mesh {}
