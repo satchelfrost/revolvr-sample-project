@@ -2,7 +2,7 @@
 Spatial.position {0, 0, 0}
 
 [entity id=1 name=Player]
-Spatial.position {0, 0, 0}
+Spatial.position {3, 0, 0}
 
 [entity id=2 name=Left_Controller parent=1]
 TrackedSpace.type {LeftController}
@@ -15,10 +15,8 @@ Spatial.scale {0.1, 0.1, 0.1}
 Mesh {}
 
 [entity id=4 name=WorldOriginMesh]
-#Mesh {}
-PointCloud.ply {flowers}
+Mesh {}
 Spatial.scale {0.5, 0.5, 0.5}
-Spatial.position {7, 3, 25}
 
 [entity id=5 name=Back_Mesh]
 Mesh {}
