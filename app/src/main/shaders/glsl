@@ -1,0 +1,75 @@
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+#define PI 3.14159265359
+
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+uniform float u_time;
+
+float plot(vec2 st, float pct){
+  return  smoothstep( pct-0.02, pct, st.y) -
+          smoothstep( pct, pct+0.02, st.y);
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution;
+
+    // Smooth interpolation between 0.1 and 0.9
+    // float y = smoothstep(0.1,0.9,st.x);
+    
+    
+    // Sharp gradient
+    // float y = smoothstep(0.45,0.55,st.x);
+    
+    
+    // One band, adjustable gradient and band location
+    // float h  = 0.05; // half gradient length
+    // float b = 0.5;
+    // float y = smoothstep(b - h, b + h,st.x);
+
+    
+	// Two bands
+// 	float h  = 0.05; // half gradient length
+// 	float b0 = 0.33;
+// 	float b1 = 0.66;
+// 	float y1 = smoothstep(b0 - h, b0 + h, st.x);
+// 	float y2 = smoothstep(b1 - h, b1 + h, st.x);
+// 	float y = mix(mix(0.0, 0.5, y1),mix(0.5,1.0, y2),y1);
+    
+    
+	// Three bands
+	// float h  = 0.05; // half gradient length
+	// float b0 = 0.25;
+	// float b1 = 0.5;
+	// float b2 = 0.75;
+	// float y1 = smoothstep(b0 - h, b0 + h, st.x);
+	// float y2 = smoothstep(b1 - h, b1 + h, st.x);
+	// float y3 = smoothstep(b2 - h, b2 + h, st.x);
+	// float y = mix(0.0, 0.33, y1);
+	// y = mix(y, mix(0.33, 0.66, y2), y1);
+	// y = mix(y, mix(0.66, 0.83, y3), y2);
+	// y = mix(y, 1.0, y3);
+
+    
+    // N bands
+	const int numBands = 3;
+	float bandPos[5];
+	float h  = 0.05; // half gradient length
+	bandPos[0] = 0.37;
+	bandPos[1] = 0.5;
+	bandPos[2] = 0.75;
+	float y = 0.0;
+	for (int i = 0; i < numBands; i++) {
+	float p = smoothstep(bandPos[i]-h, bandPos[i]+h, st.x);
+	y = mix(y, mix(float(i) / float(numBands),               float(i+1) / float(numBands), p), p);
+	}
+
+	vec3 color = vec3(y);
+    float pct = plot(st,y);
+    color = (1.0-pct)*color+pct*vec3(0.0,1.0,0.0);
+
+    gl_FragColor = vec4(color,1.0);
+}
+

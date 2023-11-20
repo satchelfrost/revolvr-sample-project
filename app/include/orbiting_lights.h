@@ -7,7 +7,8 @@ class OrbitingLights : public rvr::Ritual {
     static const int NUM_LIGHTS = 10;
     rvr::Spatial* lightSpatials_[NUM_LIGHTS]{};
 
-    float period_ = 8.0f;
+//    float period_ = 8.0f;
+    float period_ = 12.0f;
     float currentTime_ = 0.0f;
     float apoapsis_ = 3.0f;  //https://en.wikipedia.org/wiki/Apsis
     float periapsis_ = 0.7f; // https://en.wikipedia.org/wiki/Apsis
