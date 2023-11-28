@@ -27,7 +27,8 @@ layout (location = 0) out vec4 outFragColor;
 
 void main()
 {
-    vec3 diffuse = uboScene.ambientColor.xyz * uboScene.ambientColor.w;
+//    vec3 diffuse = uboScene.ambientColor.xyz * uboScene.ambientColor.w;
+    vec3 diffuse = vec3(0.0);
     vec3 specular = vec3(0.0);
     vec3 normal = normalize(inWorldNormal);
     vec3 viewDirection = normalize(uboScene.viewPos.xyz - inWorldPos.xyz);
@@ -44,17 +45,17 @@ void main()
 //        /* No bands */
 //        diffuse += intensity * cosAngleIncedence;
 
-//        /* Single band */
-//        diffuse += intensity * smoothstep(0.45, 0.55, cosAngleIncedence);
+        /* Single band */
+        diffuse += intensity * smoothstep(0.45, 0.55, cosAngleIncedence);
 
-        /* Two bands */
-        float h  = 0.03; // half gradient length
-        float b0 = 0.33;
-        float b1 = 0.66;
-        float y1 = smoothstep(b0 - h, b0 + h, cosAngleIncedence);
-        float y2 = smoothstep(b1 - h, b1 + h, cosAngleIncedence);
-        float y = mix(mix(0.0, 0.5, y1),mix(0.5,1.0, y2),y1);
-        diffuse += intensity * smoothstep(0.45, 0.55, y); // double band
+//        /* Two bands */
+//        float h  = 0.03; // half gradient length
+//        float b0 = 0.33;
+//        float b1 = 0.66;
+//        float y1 = smoothstep(b0 - h, b0 + h, cosAngleIncedence);
+//        float y2 = smoothstep(b1 - h, b1 + h, cosAngleIncedence);
+//        float y = mix(mix(0.0, 0.5, y1),mix(0.5,1.0, y2),y1);
+//        diffuse += intensity * smoothstep(0.45, 0.55, y); // double band
 
         // Specular calculation
         vec3 halfAngle = normalize(directionToLight + viewDirection);
