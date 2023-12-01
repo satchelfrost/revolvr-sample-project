@@ -27,8 +27,7 @@ layout (location = 0) out vec4 outFragColor;
 
 void main()
 {
-//    vec3 diffuse = uboScene.ambientColor.xyz * uboScene.ambientColor.w;
-    vec3 diffuse = vec3(0.0);
+    vec3 diffuse = uboScene.ambientColor.xyz * uboScene.ambientColor.w;
     vec3 specular = vec3(0.0);
     vec3 normal = normalize(inWorldNormal);
     vec3 viewDirection = normalize(uboScene.viewPos.xyz - inWorldPos.xyz);
