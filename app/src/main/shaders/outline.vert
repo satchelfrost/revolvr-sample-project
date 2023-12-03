@@ -17,6 +17,7 @@ layout (set = 0, binding = 0) uniform UBOScene
     PointLightData pointLights[10];
     int numLights;
     float outlineWidth;
+    int bandState;
 } uboScene;
 
 layout (push_constant) uniform PushConsts {
@@ -26,6 +27,6 @@ layout (push_constant) uniform PushConsts {
 
 void main()
 {
-    vec4 positionWorld = primitive.model * vec4(inPos + inNormal * 0.0125, 1.0);
+    vec4 positionWorld = primitive.model * vec4(inPos + inNormal * uboScene.outlineWidth, 1.0);
     gl_Position        = uboScene.projection * uboScene.view * positionWorld;
 }

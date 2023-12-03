@@ -4,5 +4,5 @@ layout (location = 0) out vec4 outFragColor;
 
 void main()
 {
-    outFragColor = vec4(vec3(0.0), 0.0); // for now white for consistency
+    outFragColor = vec4(vec3(0.0), 0.0);
 }
