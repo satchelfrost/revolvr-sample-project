@@ -9,6 +9,9 @@
 #define MIN_THICKNESS 0.00125f
 #define MAX_THICKNESS 0.0250f
 #define OUTLINE_SPEED 0.007f
+#define MIN_GRADIENT 0.001f
+#define MAX_GRADIENT 0.200f
+#define GRADIENT_SPEED 0.07f
 
 OrbitingLights::OrbitingLights(rvr::type::EntityId id) : Ritual(id) {
     semiMajorAxis_ = (apoapsis_ + periapsis_) / 2.0f;
@@ -35,6 +38,9 @@ OrbitingLights::OrbitingLights(rvr::type::EntityId id) : Ritual(id) {
 void OrbitingLights::Update(float delta) {
     if (ButtonPressed(rvr::ActionType::A))
         orbiting_ = !orbiting_;
+
+    if (ButtonPressed(rvr::ActionType::B))
+        bandCount_ = (bandCount_ + 1) % BAND_COUNT;
 
     UpdateUniform(delta);
 
@@ -94,30 +100,44 @@ void OrbitingLights::UpdateUniform(float delta) {
         currentThickness = newThickness;
     uniform.outlineWidth = currentThickness;
 
+    // Update gradient of cel shading
+    auto rightJoy = GetJoystickXY(rvr::Hand::Right);
+    float newGradient = currentHalfGradient + rightJoy.y * delta * GRADIENT_SPEED;
+    if (newGradient > MAX_GRADIENT)
+        currentHalfGradient = MAX_GRADIENT;
+    else if (newGradient < MIN_GRADIENT)
+        currentHalfGradient = MIN_GRADIENT;
+    else
+        currentHalfGradient = newGradient;
+    uniform.h = currentHalfGradient;
+
     // Update the band configuration in cel shading
-    switch(currConfig_) {
-    case ONE_BAND:
-        uniform.numBands = 1;
-        uniform.bands[0] = 0.5;
+    switch(bandCount_) {
+    case NO_BANDS:
+        uniform.numBands = bandCount_;
+        uniform.ambientColor = glm::vec4(1.0f, 1.0f, 1.0f, 0.05f);
         break;
-    case TWO_BANDS:   break;
-    case THREE_BANDS: break;
-    case FOUR_BANDS:  break;
-    case FIVE_BANDS:  break;
-    case NO_BANDS:    break;
+    case ONE_BAND:
+        uniform.numBands = bandCount_;
+        uniform.b0 = 0.5;
+        uniform.ambientColor = glm::vec4(1.0f, 1.0f, 1.0f, 0.02f);
+        break;
+    case TWO_BANDS:
+        uniform.numBands = bandCount_;
+        uniform.ambientColor = glm::vec4(1.0f, 1.0f, 1.0f, 0.02f);
+        uniform.b0 = 0.33;
+        uniform.b1 = 0.66;
+        break;
+    case THREE_BANDS:
+        uniform.numBands = bandCount_;
+        uniform.ambientColor = glm::vec4(1.0f, 1.0f, 1.0f, 0.02f);
+        uniform.b0 = 0.25;
+        uniform.b1 = 0.5;
+        uniform.b2 = 0.75;
+        break;
     default:
         rvr::PrintError("Improper band configuration");
     }
-//    switch(currConfig_) {
-//    case ONE_BAND:    uniform.bandState = currConfig_; break;
-//    case TWO_BANDS:   uniform.bandState = currConfig_; break;
-//    case THREE_BANDS: uniform.bandState = currConfig_; break;
-//    case FOUR_BANDS:  uniform.bandState = currConfig_; break;
-//    case FIVE_BANDS:  uniform.bandState = currConfig_; break;
-//    case NO_BANDS:    uniform.bandState = currConfig_; break;
-//    default:
-//        rvr::PrintError("Improper band configuration");
-//    }
 
     SetUniform(uniform);
 }

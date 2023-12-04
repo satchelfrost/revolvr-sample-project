@@ -17,7 +17,6 @@ layout (set = 0, binding = 0) uniform UBOScene
     PointLightData pointLights[10];
     int numLights;
     float outlineWidth;
-    int bandState;
 } uboScene;
 
 layout (push_constant) uniform PushConsts {

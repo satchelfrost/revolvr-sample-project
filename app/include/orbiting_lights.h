@@ -4,27 +4,26 @@
 #include <ecs/component/types/spatial.h>
 
 class OrbitingLights : public rvr::Ritual {
-    enum BandConfiguration {
-        ONE_BAND = 0,
+    enum NumBands {
+        NO_BANDS = 0,
+        ONE_BAND,
         TWO_BANDS,
         THREE_BANDS,
-        FOUR_BANDS,
-        FIVE_BANDS,
-        NO_BANDS,
-        CONFIG_COUNT
+        BAND_COUNT
     };
 
     static const int NUM_LIGHTS = 10;
     rvr::Spatial* lightSpatials_[NUM_LIGHTS]{};
-    BandConfiguration currConfig_ = ONE_BAND;
+    int bandCount_ = (int)NO_BANDS;
 
     bool orbiting_ = false;
     float currentThickness = 0.0125f;
+    float currentHalfGradient = 0.05f;
 
-    float period_ = 12.0f;
+    float period_ = 15.0f;
     float currentTime_ = 0.0f;
-    float apoapsis_ = 3.0f;  //https://en.wikipedia.org/wiki/Apsis
-    float periapsis_ = 0.7f; // https://en.wikipedia.org/wiki/Apsis
+    float apoapsis_ = 5.0f;  //https://en.wikipedia.org/wiki/Apsis
+    float periapsis_ = 1.0f; // https://en.wikipedia.org/wiki/Apsis
     float semiMajorAxis_;
     float semiMinorAxis_;
     float eccentricity_;
