@@ -12,14 +12,6 @@ struct PointLightData {
     vec4 color;    // color + intensity
 };
 
-//struct CelShading {
-//    int numBands;
-//    float h;
-//    float b0;
-//    float b1;
-//    float b2;
-//};
-
 layout (set = 0, binding = 0) uniform UBOScene
 {
     mat4 projection;
