@@ -15,7 +15,7 @@ Spatial.scale {0.1, 0.1, 0.1}
 Ritual.type {MovementRitual}
 Mesh {}
 
-[entity id=12 name=joystick_pivot_point parent=2]
+[entity id=12 name=joystick_pivot_point parent=3]
 Spatial.position {0, 0, -0.05}
 Spatial.scale {0.1, 0.1, 1}
 
