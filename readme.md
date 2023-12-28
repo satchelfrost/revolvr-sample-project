@@ -1,6 +1,6 @@
 ![](logo.png)
 # *RevolVR Sample Project*
->**_IMPORTANT:_** This repository has been archived. Instead, use the main RevolVR repo which contains buildable samples in the an `examples` folder.
+>**_IMPORTANT:_** This repository has been archived. Instead, use the main RevolVR repo which contains buildable samples in the [examples](https://github.com/satchelfrost/revolvr) folder.
 
 ## Table of Contents
 * [Overview](#overview)
